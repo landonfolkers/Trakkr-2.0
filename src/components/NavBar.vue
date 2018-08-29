@@ -1,15 +1,20 @@
 <template>
-<ActionBar>
-    <NavigationButton @tap="onTapShare" text="Menu" android.systemIcon="ic_more_items" />
-    <StackLayout orientation="horizontal" class="menu">
-        <Label text="Trakkr" fontSize="30" fontFamily="BlackOps" verticalAlignment="center" />
-    </StackLayout>
-</ActionBar>
+    <ActionBar>
+        <NavigationButton @tap="onTap()" text="Menu" android.systemIcon="ic_more_items" />
+        <StackLayout orientation="horizontal" class="menu">
+            <Label text="Trakkr" fontSize="30" fontFamily="BlackOps" verticalAlignment="center" />
+        </StackLayout>
+    </ActionBar>
 </template>
 
 <script>
+
 export default {
     name: 'NavBar',
+    data() {
+        return {
+        };
+    },
 }
 </script>
 

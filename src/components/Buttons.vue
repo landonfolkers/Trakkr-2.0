@@ -11,6 +11,14 @@
 
 <script>
 import NavBar from './NavBar';
+import {
+    isEnabled,
+    enableLocationRequest,
+    getCurrentLocation,
+    watchLocation,
+    distance,
+    clearWatch
+} from "nativescript-geolocation";
 
 export default {
     components: {
@@ -21,11 +29,26 @@ export default {
             level1: "Level 1",
             level2: "Level 2",
             level3: "Level 3",
+            location: {},
         };
+    },
+    created() {
+        let location = getCurrentLocation({
+            desiredAccuracy: 3,
+            updateDistance: 10,
+            maximumAge: 20000,
+            timeout: 20000
+        }).
+        then(function (loc) {
+            if (loc) {
+                location = loc
+                console.log(location);
+            }
+        });
     },
     methods: {
         sendMessages(level) {
- 
+
         },
         openAlert(level) {
             confirm({

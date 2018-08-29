@@ -26,7 +26,6 @@
 </template>
 
 <script>
- require("nativescript-vue").registerElement("RadSideDrawer", () => require("nativescript-ui-sidedrawer").RadSideDrawer);
 
 export default {
     name: 'NavMenu',
